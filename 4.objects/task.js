@@ -1,8 +1,8 @@
-function Student(name, gender, gender) {
+function Student(name, gender, age) {
   // Ваш код
   this.name = name;
   this.gender = gender;
-  this.gender = gender;
+  this.age = age;
 }
 
 let student3 = new Student("Mary", "female", 18);
