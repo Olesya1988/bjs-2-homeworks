@@ -16,8 +16,8 @@ function validateCount(arg2) {
 
 class Triangle {
     constructor(a, b, c) {
-        this.a = a,
-        this.b = b,
+        this.a = a;
+        this.b = b;
         this.c = c;
 
         if((this.a + this.b) < this.c || (this.b + this.c) < this.a || (this.a + this.c) < this.b) {
@@ -26,7 +26,7 @@ class Triangle {
     }
 
     getPerimeter(a, b, c) {
-        let perimeter = this.a + this.b + this.c;
+        const perimeter = this.a + this.b + this.c;
         return perimeter;
     }
 

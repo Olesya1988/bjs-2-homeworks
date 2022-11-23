@@ -119,23 +119,11 @@ class Student {
     getAverageBySubject(subjectName) {        
         if(this.marks[subjectName] === "undefined") {
             return 'Несуществующий предмет';
-        } else { 
-            // let sum = 0;
-            // let average = 0;
-
-
-            // for(let i = 0; i < this.marks[subjectName].length; i++) {
-            //     sum += this.marks[subjectName][i];
-            // }      
-
-            // average = sum / this.marks[subjectName].length;
-        
-            // return `Средний балл по предмету ${subjectName} ${average}`;
-
+        } else {        
             let average = 0;
             average = this.marks[subjectName].reduce((acc, mark) => acc + mark, 0) / this.marks[subjectName].length;
 
-            return `Средний балл по предмету ${subjectName} ${average}`;
+            return average;
         }        
     }    
 
@@ -146,6 +134,6 @@ class Student {
             sum += this.getAverageBySubject(subjects[i]);
         }
 
-        return `Средний балл по всем предметам ${sum / subjects.length}`;
+        return sum / subjects.length;
     }
   }
