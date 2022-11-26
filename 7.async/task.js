@@ -20,8 +20,9 @@ class AlarmClock {
 
     removeClock(id) {
         let removeId = this.alarmCollection.findIndex(item => item.id === id);
-        this.alarmCollection.splice([removeId], 1);
+        
         if(removeId !== -1) {
+            this.alarmCollection.splice(removeId, 1);
             return true;            
         } else {
             return false;
@@ -71,8 +72,7 @@ class AlarmClock {
 
     printAlarms() {
         this.alarmCollection.forEach((item) => {
-            console.log(this.alarmCollection.id);
-            console.log(this.alarmCollection.time);
+            console.log(`Таймер ${item.id} заведен на ${item.time}`);
         });
     }
 
@@ -84,12 +84,15 @@ class AlarmClock {
 
 function testCase() {
     let someAlarmClock = new AlarmClock();
+    const anyValue = () => console.log('Время просыпаться :)');
+    const anyValue2 = () => console.log('Пора вставать!');
+    const anyValue3 = () => console.log('Подъем! Мы опазываем!');
 
-    someAlarmClock.addClock('16:57', console.log('Время просыпаться :)'), 1);
+    someAlarmClock.addClock('16:57', anyValue(), 1);
 
-    someAlarmClock.addClock('16:58', console.log('Пора вставать!'), 2);
+    someAlarmClock.addClock('16:58', anyValue2(), 2);
 
-    someAlarmClock.addClock('16:59', console.log('Подъем! Мы опазываем!'), 3);    
+    someAlarmClock.addClock('16:59', anyValue3(), 3);    
 
     someAlarmClock.printAlarms();
 
